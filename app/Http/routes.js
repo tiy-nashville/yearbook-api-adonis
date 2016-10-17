@@ -30,6 +30,9 @@ Route.any('/', function * (request, response) {
   });
 });
 
+Route.resource('/cohorts', 'CohortController');
+Route.resource('/students', 'StudentController');
+
 const User = use('App/Model/User');
 Route.get('/users', function * (request, response) {
   const users = yield User.all();
